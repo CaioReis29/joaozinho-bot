@@ -1,8 +1,7 @@
-
-
 import 'dart:io';
 
 import 'package:async_dart/perguntas/time_questions.dart';
+import 'package:async_dart/timing/waiting_time.dart';
 
 void main() async {
   String joaozinhoBot = 'JoãozinhoBOT:\n';
@@ -12,6 +11,7 @@ void main() async {
   String userAnswer = '';
 
   print('__ Um momento, pois Joãozinho está se ajeitando... __');
+  await BotClock().Clock(3);
 
   print('JoãozinhoBOT:\n E aí, bro \n Qual a dúvida que você quer tirar?');
 
@@ -19,6 +19,7 @@ void main() async {
     userAnswer = stdin.readLineSync().toString();
 
     print('Estou processando sua pergunta, um momento...');
+    await BotClock().Clock(2);
 
     if (
       userAnswer.contains('Xau') ||
@@ -36,7 +37,9 @@ void main() async {
         print(joaozinhoBot + 'Certo.. Então até a próxima, flw!!');
       } else if(TimeQuestions(userAnswer).isThisTime()) {
         TimeQuestions(userAnswer).TimeQuestion();
+        await BotClock().Clock(3);
       } else {
+        await BotClock().Clock(5);
         print(joaozinhoBot + 'Foi mal, mais não fui desenvolvido para responder essa pergunta...');
         print(joaozinhoBot + 'Você pode me fazer uma outra pergunta ou dar Tchau para mim :D');
       }
