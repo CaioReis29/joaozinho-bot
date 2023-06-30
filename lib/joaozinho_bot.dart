@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:async_dart/perguntas/time_questions.dart';
+import 'package:async_dart/questions/time_questions.dart';
 import 'package:async_dart/timing/waiting_time.dart';
 
 void main() async {
@@ -9,6 +9,14 @@ void main() async {
   var activity = true;
 
   String userAnswer = '';
+
+  var myStream = BotClock().joaozinhoStream(1, 10);
+  var subscriber = myStream.listen((event) {
+    print('                    Joãozinho is activated fot $event seconds');
+  }, onDone: () {
+    print('JoãozinhoBOT is finishing its work, ask the last question...');
+    activity = false;
+  });
 
   print('__ Um momento, pois Joãozinho está se ajeitando... __');
   await BotClock().Clock(3);
