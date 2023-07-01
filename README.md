@@ -2,7 +2,7 @@
 
 ## :memo: Descrição:
 
-<p>Joãozinho é um bot desenvolvido em Dart que consegue responder perguntas sobre hora, dia, mês ou ano em que você está perguntando. O objetivo principal de criar essa aplicação é princpalmente para praticar boas práticas sobre assincrinismo (Async/await) criando funções futuras (Future), que é uma função que é uma promessa na qual o valor será retornado posteriormente.</p> 
+<p>Joãozinho é um bot desenvolvido em Dart que consegue responder perguntas sobre hora, dia, mês ou ano em que você está perguntando. O objetivo principal de criar essa aplicação é princpalmente para praticar boas práticas sobre Streams e assincrinismo (Async/await) criando funções futuras (Future), que é uma função que é uma promessa na qual o valor será retornado posteriormente.</p> 
 
 ## :wrench: Tecnologias utilizadas
 
