@@ -14,6 +14,6 @@ class BotClock {
       yield i ++;
     }
 
-    print('The stream is finished');
+    print('A stream foi finalizada.');
   }
 }

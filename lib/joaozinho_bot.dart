@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:async_dart/questions/good_manners.dart';
 import 'package:async_dart/questions/time_questions.dart';
 import 'package:async_dart/timing/waiting_time.dart';
 
@@ -12,9 +13,9 @@ void main() async {
 
   var myStream = BotClock().joaozinhoStream(1, 10);
   var subscriber = myStream.listen((event) {
-    print('                    Joãozinho is activated fot $event seconds');
+    print('                    Joãozinho está ativo há: $event segundos');
   }, onDone: () {
-    print('JoãozinhoBOT is finishing its work, ask the last question...');
+    print('JoãozinhoBOT está prestes a se desligar, faça uma última pergunta...');
     activity = false;
   });
 
@@ -46,7 +47,12 @@ void main() async {
       } else if(TimeQuestions(userAnswer).isThisTime()) {
         TimeQuestions(userAnswer).TimeQuestion();
         await BotClock().Clock(3);
-      } else {
+      } else if(GoodManners(userAnswer).isThisManners()) {
+        GoodManners(userAnswer).goodManners();
+      } else if(false) {
+        //
+      }
+      else {
         await BotClock().Clock(5);
         print(joaozinhoBot + 'Foi mal, mais não fui desenvolvido para responder essa pergunta...');
         print(joaozinhoBot + 'Você pode me fazer uma outra pergunta ou dar Tchau para mim :D');
